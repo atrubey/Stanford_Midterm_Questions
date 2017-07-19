@@ -51,21 +51,21 @@ public class OncogeneTest
 	}
 	
 	// The following are extra credit tests, comment out the @Ignore to run them.
-	@Ignore
+	//@Ignore
 	@Test(expected = NullPointerException.class)
 	public void level0ExtraCreditTestOncogeneDetectorWithNullHealthySequence()
 	{
 		instance.isOncogene(null, cancerSequences, "TGC");
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test(expected = NullPointerException.class)
 	public void level0ExtraCreditTestOncogeneDetectorWithNullCancerSequence()
 	{
 		instance.isOncogene(healthySequences, null, "TGC");
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void level1ExtraCreditTestOncogeneDetectorWithEmptyHealthySequence()
 	{
@@ -77,7 +77,7 @@ public class OncogeneTest
 		}
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void level1ExtraCreditTestOncogeneDetectorWithEmptyCancerSequence()
 	{
