@@ -10,18 +10,19 @@ public class AnimalHipster {
 			HashMap<String, String> favoriteAnimals) {
 		
 		ArrayList<String> animalHipsters = new ArrayList<String>();
+		boolean isAnimalHipster; 
 		
-		if (!network.get("Amy").contains("Elena")) {
-			animalHipsters.add("Amy");
-		} 
-		if (!network.get("Brie").contains("Devney") && !network.get("Brie").contains("Fan-Hal")) {
-			animalHipsters.add("Brie");
-		} 
-		if (!network.get("Chris").contains("")) {
-			
-		} 
-
-		animalHipsters.add("Chris");
+		for (String person : network.keySet()) {
+			isAnimalHipster = true; 
+			for (String friend : network.get(person)) {
+				if (favoriteAnimals.get(person) == favoriteAnimals.get(friend)) {
+					isAnimalHipster = false; 
+				}
+			}
+			if (isAnimalHipster) {
+				animalHipsters.add(person);
+			}
+		}
 		
 		return animalHipsters;
 	}
